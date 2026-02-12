@@ -1,0 +1,50 @@
+# Name : William Karanja
+# Date : 12/02/2026
+# String_formatting
+
+# Get string length
+sentence = "I  despise fake friends"
+
+string_length = len(sentence)
+
+print(f"The length is: {string_length}")
+
+# Spliting a string
+sentence_2 = "Mathematics Biology"
+split = sentence_2.split(" ")
+
+print(f"the first subject is:",split[1])
+
+
+# Make everything CAPS
+mpesa_code = "ub7c165xxu"
+
+capitalized = mpesa_code.upper()
+print("New mpesa code:",capitalized)
+
+mpesa_code = "UB7C165XXU"
+
+small_letters = mpesa_code.lower()
+print("New mpesa code:",small_letters)
+
+# Replacing characters in a string
+
+balance = "200kes"
+amount_added = "40kes"
+
+cleaned_balance = balance.replace("kes", "")
+
+print("Cleaned balance:", cleaned_balance)
+
+cleaned_amount_added = amount_added.replace("kes", "")
+
+print("Cleaned amount added: ", cleaned_amount_added)
+
+new_balance = int(cleaned_balance) + int(cleaned_amount_added)
+
+print("The new balance is:", new_balance)
+
+
+# Mpesa message
+mpesa_message =(f"Confirmed .KES {cleaned_amount_added} received.New M-PESA balance is KES {new_balance}.Thank you for using M-PESA")
+print(mpesa_message)
