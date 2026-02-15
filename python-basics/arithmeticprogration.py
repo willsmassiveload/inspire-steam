@@ -2,7 +2,7 @@
 # Date : 13/02/2026
 # Program to calculate arithmetic progration
 
-# Calculating nth term
+ #Calculating nth term
 
 a = int (input("Enter the firts number :"))
 n = int (input("Enter the number of terms :"))
