@@ -17,5 +17,5 @@ for key in students :
     print(key)
 
 
-for val in students.value():
+for val in students.values():
     print(val)    
