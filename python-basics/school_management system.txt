@@ -1,0 +1,27 @@
+===== STUDENT REPORT =====
+
+ID: Aa001
+Name: Nathan  Mwenje
+Course: Water Enginering
+Phone: 0722913585
+--------------------------
+ID: Aa002
+Name: Makayla Njetri
+Course: Nursing
+Phone: 0703623621
+--------------------------
+ID: Aa003
+Name: Kehlani Achieng
+Course: Culinary arts
+Phone: 0756784231
+--------------------------
+ID: Aa004
+Name: John  Ngaithe
+Course: Computer Science
+Phone: 0768663421
+--------------------------
+ID: Aa005
+Name: Kelvin Mbabaz
+Course: Peditrian
+Phone: 0758593249
+--------------------------
