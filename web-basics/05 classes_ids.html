@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucki Artist Page</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+            color: gold;
+            font-family: 'Georgia', serif;
+            margin: 0;
+        }
+
+        #page-wrapper {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        /* GLASS CARD EFFECT */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        /* PHOTOS */
+        #photos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .artist_photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        .artist_photo:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 0 20px gold;
+        }
+
+        /* SONG LIST */
+        .song {
+            background: #222;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .song:hover {
+            background: gold;
+            color: black;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* MEDIA */
+        video, audio {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        h2, h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="page-wrapper">
+
+    <h1>Lucki</h1>
+
+    <p>
+        Chicago-based artist known for his introspective alternative trap sound,
+        blending emotional storytelling with hypnotic flows.
+    </p>
+
+    <!-- PHOTOS -->
+    <div class="card" id="photos">
+        <img class="artist_photo" src="./assets/photos/lucki.png">
+        <img class="artist_photo" src="./assets/photos/lucki.png">
+    </div>
+
+    <!-- MUSIC -->
+    <div class="card" id="listening-section">
+        <h2>🎵 Songs</h2>
+
+        <div class="song">Latest Song</div>
+        <div class="song">Earlier Song</div>
+        <div class="song">Top Hit</div>
+
+        <!-- VIDEO -->
+        <h3>▶ Watch & Listen</h3>
+        <video controls>
+            <source src="./assets/videos/say wallahi.mp4" type="video/mp4">
+        </video>
+
+        <!-- AUDIO (FROM ASSETS FOLDER) -->
+        <h3>🔊 Audio Player</h3>
+        <audio controls>
+            <source src="./assets/audio/Do You Want.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+</div>
+
+</body>
+</html>
