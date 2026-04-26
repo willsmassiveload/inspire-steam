@@ -1,0 +1,51 @@
+/* Color Palette */
+:root {
+  --first-color: #00d2ff;      /* Neon Cyan */
+  --second-color: #3a7bd5;     /* Deep Blue */
+  --bg-color: #0b0e14;         /* Deep Space Black */
+  --container-color: #161b22;  /* Dark Grey-Blue */
+  --text-color: #abb2bf;
+  --white-color: #ffffff;
+}
+
+/* Captivating Work Cards */
+.work__card {
+  background: var(--container-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.work__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 210, 255, 0.2);
+  border-color: var(--first-color);
+}
+
+.work__img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.work__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.work__card:hover .work__img {
+  transform: scale(1.1);
+}
+
+.work__content {
+  padding: 1.5rem;
+}
+
+.work__type {
+  font-size: 0.75rem;
+  color: var(--first-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

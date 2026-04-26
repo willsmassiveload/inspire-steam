@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Abby ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#yesBtn {
+    background: #ff2e63;
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #ff2e63;
+    position: absolute;
+}
+
+#musicOverlay {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index: 10;
+}
+
+#musicOverlay button {
+    background:#ff2e63;
+    color:white;
+    font-size:1.2rem;
+}
+</style>
+</head>
+
+<body>
+
+<div id="musicOverlay">
+    <h2>💖 Tap to start something special 💖</h2>
+    <button onclick="startMusic()">Play Music 🎶</button>
+</div>
+
+<div class="container">
+    <h1>Abby ❤️</h1>
+    <p>
+        You make everything feel better...  
+        every moment with you is special.  
+        <br><br>
+        Will you be my girlfriend?
+    </p>
+
+    <button id="yesBtn" onclick="sayYes()">Yes 😍</button>
+    <button id="noBtn" onmouseover="moveNo()">No 😅</button>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="Fire & Desire.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// try autoplay
+window.onload = () => {
+    music.play().catch(() => {
+        document.getElementById("musicOverlay").style.display = "flex";
+    });
+};
+
+function startMusic() {
+    music.play();
+    document.getElementById("musicOverlay").style.display = "none";
+}
+
+function sayYes() {
+    document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;
+    background: linear-gradient(135deg,#ff2e63,#ff7eb3); color:white; text-align:center;">
+        <div>
+            <h1>💖 Abby, you just made me the happiest person alive 💖</h1>
+            <p>I promise to make you smile every day 😊</p>
+        </div>
+    </div>`;
+}
+
+function moveNo() {
+    let btn = document.getElementById("noBtn");
+    let x = Math.random() * 300 - 150;
+    let y = Math.random() * 300 - 150;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+
+</body>
+</html>

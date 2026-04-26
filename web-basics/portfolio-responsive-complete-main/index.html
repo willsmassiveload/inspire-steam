@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Kabebe | Portfolio</title>
+    
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        /* === THEME VARIABLES === */
+        :root {
+            --header-height: 4rem;
+            --body-color: #0b0e14;
+            --container-color: rgba(18, 22, 30, 0.6);
+            --title-color: #f0f6fc;
+            --text-color: #abb2bf;
+            --first-color: #00d2ff;      /* Neon Cyan */
+            --first-color-alt: #0077b6;
+            --accent-pink: #ff00ff;      /* Vibrant Magenta */
+            --glass-blur: blur(15px);
+            --neon-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+        }
+
+        /* === BASE === */
+        * { box-sizing: border-box; padding: 0; margin: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        ul { list-style: none; }
+        a { text-decoration: none; transition: .3s; }
+        img { max-width: 100%; height: auto; display: block; border-radius: 1rem; }
+
+        /* === LAYOUT === */
+        .bd-grid {
+            max-width: 1100px;
+            display: grid;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        .section { padding: 6rem 0 2rem; }
+        .section-title {
+            position: relative;
+            font-size: 2.25rem;
+            color: var(--title-color);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-title span { color: var(--first-color); }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px; height: 4px;
+            left: 0; right: 0; margin: auto; top: 3.5rem;
+            background-color: var(--accent-pink);
+            box-shadow: 0 0 10px var(--accent-pink);
+        }
+
+        /* === HEADER / NAV === */
+        .l-header {
+            width: 100%;
+            position: fixed;
+            top: 0; left: 0; z-index: 100;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav__logo { color: var(--title-color); font-size: 1.5rem; font-weight: 700; }
+        .nav__logo span { color: var(--first-color); }
+        .nav__list { display: flex; gap: 2rem; }
+        .nav__link { color: var(--text-color); font-weight: 600; }
+        .nav__link:hover { color: var(--first-color); }
+
+        /* === HOME === */
+        .home__container { grid-template-columns: 1fr; gap: 2rem; align-items: center; text-align: center; }
+        .home__title { font-size: 3.5rem; color: var(--title-color); }
+        .home__title span { color: var(--first-color); text-shadow: var(--neon-shadow); }
+        .home__subtitle { font-size: 1.5rem; margin-bottom: 2rem; }
+        .home__img-box {
+            justify-self: center;
+            border: 3px solid var(--first-color);
+            box-shadow: var(--neon-shadow);
+            border-radius: 2rem;
+            overflow: hidden;
+            width: 280px; height: 350px;
+        }
+        .home__img { width: 100%; height: 100%; object-fit: cover; }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+            color: #fff;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            border-radius: 5rem;
+            transition: .3s;
+        }
+        .button:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
+
+        /* === SKILLS === */
+        .skills__container { grid-template-columns: 1fr; gap: 2rem; }
+        .skills__img-holder {
+            width: 100%; height: 250px;
+            overflow: hidden; border-radius: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .skills__img { width: 100%; height: 100%; object-fit: cover; }
+        .skills__data {
+            background: var(--container-color);
+            padding: 1.5rem; border-radius: 1rem;
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 1rem;
+        }
+        .skills__icon { font-size: 2rem; color: var(--accent-pink); }
+
+        /* === WORKS SHOWCASE === */
+        .work__container {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .work__card {
+            background: var(--container-color);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: .4s;
+        }
+        .work__card:hover {
+            transform: translateY(-10px);
+            border-color: var(--first-color);
+        }
+        .work__img-box { height: 180px; overflow: hidden; background: #1c2128; }
+        .work__img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
+        .work__card:hover .work__img { transform: scale(1.1); }
+        .work__content { padding: 1.5rem; }
+        .work__tag { color: var(--accent-pink); font-size: .7rem; font-weight: 700; text-transform: uppercase; }
+        .work__title { color: var(--title-color); margin: .5rem 0; }
+
+        /* === CONTACT === */
+        .contact__container { grid-template-columns: 1fr; justify-items: center; }
+        .contact__form { width: 100%; max-width: 600px; display: grid; gap: 1.2rem; }
+        .contact__input {
+            width: 100%; padding: 1rem;
+            background: var(--container-color);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: .8rem; color: #fff; outline: none;
+        }
+        .contact__input:focus { border-color: var(--first-color); }
+
+        /* === FOOTER === */
+        footer { padding: 3rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* === DESKTOP RESPONSIVE === */
+        @media screen and (min-width: 768px) {
+            .bd-grid { margin-left: auto; margin-right: auto; }
+            .home__container { grid-template-columns: repeat(2, 1fr); text-align: left; }
+            .skills__container { grid-template-columns: repeat(2, 1fr); }
+            .home__img-box { width: 350px; height: 450px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div><a href="#" class="nav__logo">WILLIAM<span>.</span></a></div>
+            <ul class="nav__list">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#work" class="nav__link">Work</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <section class="home bd-grid section" id="home">
+            <div class="home__container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Hi, I'm <span>William</span></h1>
+                    <p class="home__subtitle">Embedded Systems Developer</p>
+                    <a href="#contact" class="button">Build Something</a>
+                </div>
+                <div class="home__img-box">
+                    <img src="assets/img/your_face_home.png" alt="Profile" class="home__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Technical <span>Expertise</span></h2>
+            <div class="bd-grid skills__container">
+                <div class="skills__img-holder">
+                    <img src="assets/img/your_face_skills.png" alt="Work Process" class="skills__img">
+                </div>
+                <div class="skills__content">
+                    <div class="skills__data">
+                        <i class='bx bx-chip skills__icon'></i>
+                        <h3 class="skills__subtitle">Robotics</h3>
+                        <p>Drone dynamics and simulation using pysimverse.</p>
+                    </div>
+                    <div class="skills__data">
+                        <i class='bx bxl-python skills__icon'></i>
+                        <h3 class="skills__subtitle">IoT Development</h3>
+                        <p>Environmental monitoring and hardware integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work section" id="work">
+            <h2 class="section-title">Project <span>Showcase</span></h2>
+            <div class="work__container bd-grid">
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/drone.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">Robotics</span>
+                        <h3 class="work__title">Drone Control</h3>
+                        <p>Manual control simulation with pysimverse.</p>
+                    </div>
+                </article>
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/mimic.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">Industrial</span>
+                        <h3 class="work__title">Robot Mimic</h3>
+                        <p>Industrial pick-and-place replication logic.</p>
+                    </div>
+                </article>
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/monitor.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">IoT</span>
+                        <h3 class="work__title">Climate Monitor</h3>
+                        <p>Real-time temp/humidity recording system.</p>
+                    </div>
+                </article>
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/lighting.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">Automation</span>
+                        <h3 class="work__title">Lighting Series</h3>
+                        <p>Automated bulb sequences via Wokwi.</p>
+                    </div>
+                </article>
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/combat.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">Software</span>
+                        <h3 class="work__title">Combat Stats</h3>
+                        <p>Python challenge recording game mechanics.</p>
+                    </div>
+                </article>
+                <article class="work__card">
+                    <div class="work__img-box"><img src="assets/img/app.jpg" class="work__img"></div>
+                    <div class="work__content">
+                        <span class="work__tag">App Dev</span>
+                        <h3 class="work__title">Student Registry</h3>
+                        <p>Academic registration application development.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="contact__container bd-grid">
+                <form action="#" class="contact__form">
+                    <input type="text" placeholder="Your Name" class="contact__input">
+                    <input type="email" placeholder="Your Email" class="contact__input">
+                    <textarea placeholder="Tell me about your project..." cols="0" rows="10" class="contact__input"></textarea>
+                    <input type="button" value="Send Message" class="button" style="border:none; cursor:pointer;">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 William Kabebe. Built for Excellence.</p>
+    </footer>
+
+</body>
+</html>
